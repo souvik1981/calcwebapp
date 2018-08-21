@@ -22,4 +22,10 @@ node {
       junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.jar'
    }
+   stage('Email Notification'){
+      mail bcc: '', body: '''Jenkins build success!
+      Thanks
+      Sada''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'sadanand.rud@gmail.com'
+   }     
+    
 }

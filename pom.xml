@@ -7,6 +7,11 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>calcwebapp Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+<properties>
+   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>  
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -25,6 +30,33 @@
     
   </dependencies>
   <build>
+	    <plugins>
+		  <plugin>
+		   <artifactId>maven-pmd-plugin</artifactId>
+		   <configuration>
+		      <includeTests>true</includeTests>
+		      <rulesets>
+		         <ruleset>/category/java/bestpractices.xml</ruleset>
+		         <ruleset>/category/java/codestyle.xml</ruleset>
+		      </rulesets>
+		      <failOnViolation>true</failOnViolation>
+		   </configuration>
+		   <executions>
+		      <execution>
+		         <phase>test</phase>
+		         <goals>
+		            <goal>pmd</goal>
+		            <goal>cpd</goal>
+		            <goal>cpd-check</goal>
+		            <goal>check</goal>
+		         </goals>
+		      </execution>
+		   </executions>
+		</plugin>  
+	  </plugins>
+  
     <finalName>calcwebapp</finalName>
   </build>
+  
+ 
 </project>

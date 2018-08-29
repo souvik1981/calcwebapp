@@ -35,6 +35,8 @@
 		   <artifactId>maven-pmd-plugin</artifactId>
 		   <configuration>
 		      <includeTests>true</includeTests>
+		      <minimumTokens>10</minimumTokens>
+	          <targetJdk>1.8</targetJdk>
 		      <rulesets>
 		         <ruleset>/category/java/bestpractices.xml</ruleset>
 		         <ruleset>/category/java/codestyle.xml</ruleset>

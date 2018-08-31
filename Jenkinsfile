@@ -27,8 +27,19 @@ node {
 
 } catch(e) {
 	echo "Caught some exception"
+	
+    mail bcc: '', body: '''Jenkins build Failure: ${env.JOB_NAME}!
+	
+    Better get it fixed!
+    Anand''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'anandr72@gmail.com' 
 }  finally {
 	echo "Finally Block"
+	
+	mail bcc: '', body: '''Jenkins build Success: ${env.JOB_NAME}!
+	
+    Build executed!
+    Anand''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'anandr72@gmail.com' 
+
 }
     
 }

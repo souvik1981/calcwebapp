@@ -13,6 +13,11 @@ node {
       bat("mvn test")
 
    }
+   
+   stage('Test Results') {
+      junit '**/target/surefire-reports/TEST-*.xml'
+      archive 'target/*.jar'
+   }
 
 } catch(e) {
 	echo "Caught some exception"

@@ -21,7 +21,8 @@ node {
    
    stage('Package & Deploy') {
    bat("mvn package")
-	 bat 'curl --upload-file target/calcwebapp.war "http://deployer:deployer@localhost:8081/manager/text/deploy?path=/webcalcdemo&update=true"'
+	 //bat 'curl --upload-file target/calcwebapp.war "http://deployer:deployer@localhost:8081/manager/text/deploy?path=/webcalcdemo&update=true"'
+      bat 'curl --upload-file target/calcwebapp.war "http://amin:password@174.129.59.31:8080//manager/text/deploy?path=/webcalcdemo&update=true"'
    }
    
 

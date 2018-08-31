@@ -4,7 +4,7 @@ node {
   
   stage('Code Checkout') { 
       // Get some code from a GitHub repository
-      git 'https://github.com/sadanandrudraiah/calcwebapp.git'
+      git 'https://github.com/rchidana/calcwebapp.git'
 
    }
    

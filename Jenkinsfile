@@ -19,7 +19,8 @@ node {
       archive 'target/*.jar'
    }
    
-   stage('Deploy Tomcat') {
+   stage('Package & Deploy') {
+   bat("mvn package")
 	 bat 'curl --upload-file target/calcwebapp.war "http://deployer:deployer@localhost:8081/manager/text/deploy?path=/webcalcdemo&update=true"'
    }
    

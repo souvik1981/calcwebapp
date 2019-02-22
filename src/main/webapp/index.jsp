@@ -1,4 +1,7 @@
 <html>
+	<head>	
+			<title>CalCulatorApp</title>
+	</head>
 <body>
 <h2>Calculator</h2>
 
